@@ -19,5 +19,5 @@ name = "prog1"
 path = "src/bin/prog1.rs"
 
 [[bin]]
-name = "prog2"
-path = "src/bin/prog2.rs"
+name = "extract-zip"
+path = "src/bin/extract-zip.rs"
