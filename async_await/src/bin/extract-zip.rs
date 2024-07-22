@@ -49,5 +49,14 @@ fn real_main() -> i32{
             let mut outfile = fs::File::create(&outpath).unwrap();
             io::copy(&mut file, &mut outfile).unwrap();
         }
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::PermissionsExt;
+
+            if let Some(mode) = file.unix_mode(){
+                fs::set_permissions(&outpath, fs::Permissions::from_mode(mode)).unwrap();
+            }
+        }
     }
+    0
 }
