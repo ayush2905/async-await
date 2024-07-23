@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-reqwest = {version = "0.10", features = ["json"]}
+reqwest = {version = "0.10", features = ["json", "blocking"]}
 error-chain = "0.12.4"
 tokio = { version = "0.2.3", features = ["full"]}
 serde_json = "1.0"
@@ -22,3 +22,7 @@ path = "src/bin/prog1.rs"
 [[bin]]
 name = "extract-zip"
 path = "src/bin/extract-zip.rs"
+
+[[bin]]
+name = "write-json"
+path = "src/bin/write-json.rs"
